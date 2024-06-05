@@ -1,20 +1,13 @@
 import Image from 'next/image';
-import { getPlaiceholder } from 'plaiceholder';
-import fs from 'fs/promises';
 
-export const dynamic = 'force-static'; // Ensure static generation
-
-export default async function Home() {
-  const file = await fs.readFile('./public/bg.png');
-  const { base64 } = await getPlaiceholder(file);
-
+export default async function Home() {  
   return (
     <main>
       <Image
         src="/bg.png"
         alt="background"
         placeholder="blur"
-        blurDataURL={base64}
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNgYFRcMnfV/y9/GbkVGdjUnDNzW1JyOxhYlAF40Ah0YMgUXQAAAABJRU5ErkJggg=="
         quality={100}
         sizes='100vw 100vh'
         fill={true}
