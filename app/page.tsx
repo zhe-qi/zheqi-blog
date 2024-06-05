@@ -16,8 +16,8 @@ export default async function Home() {
         placeholder="blur"
         blurDataURL={base64}
         quality={100}
-        fill
-        sizes="100vw"
+        sizes='100vw 100vh'
+        fill={true}
         style={{
           objectFit: 'cover',
         }}
