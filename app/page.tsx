@@ -14,8 +14,7 @@ export default async function Home() {
         sizes="(max-width: 768px) 768px, (max-width: 1200px) 1200px, (max-width: 1920px) 1920px, 3840px"
         fill
         style={{
-          objectFit: "cover",
-          height: "auto"
+          objectFit: "cover"
         }}
       />
     </main>
