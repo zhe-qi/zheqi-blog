@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./home.css";
 import BackTop from "@/components/The/backTop"
+import dynamic from 'next/dynamic';
 
 const base64 =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNgYFRcMnfV/y9/GbkVGdjUnDNzW1JyOxhYlAF40Ah0YMgUXQAAAABJRU5ErkJggg==";
@@ -61,20 +62,7 @@ export default function Home() {
         </svg>
       </div>
 
-      <Image
-        src="/background-home.png"
-        alt="background-home"
-        width={1600}
-        height={1792}
-        style={{
-          position: "fixed",
-          objectFit: "cover",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-        }}
-      />
+      <DynamicImage />
 
       <BackTop />
 
@@ -82,3 +70,28 @@ export default function Home() {
     </main>
   );
 }
+
+const DynamicImage = dynamic(
+  () =>
+    new Promise<any>((resolve) =>
+      setTimeout(() => {
+        resolve(() => (
+          <Image
+            src="/background-home.png"
+            alt="background-home"
+            width={1600}
+            height={1792}
+            style={{
+              position: "fixed",
+              objectFit: "cover",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+            }}
+          />
+        ));
+      }, 300) // 这里的3000是延迟加载的毫秒数，你可以根据需要调整
+    ),
+  { ssr: false } // 禁用服务器端渲染
+);

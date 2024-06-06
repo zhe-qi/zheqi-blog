@@ -1,23 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { useScroll, useTransform, motion, useMotionValue } from 'framer-motion';
 import { useEffect, useState } from "react";
 
 const BackTop = () => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [300, 500], [0, 1]); // Adjust the [0, 300] values as needed
-  const [pointerEvents, setPointerEvents] = useState('none');
+  const pointerEvents = useMotionValue('none');
 
   useEffect(() => {
     const unsubscribe = opacity.on("change", (value) => {
-      setPointerEvents(value === 0 ? "none" : "auto");
+      pointerEvents.set(value === 0 ? "none" : "auto");
     });
 
     return () => {
       unsubscribe();
     };
-  }, [opacity]);
+  }, [opacity, pointerEvents]);
   
   const backTop = () => {
     window.scrollTo({
@@ -35,7 +35,7 @@ const BackTop = () => {
         width: "115px",
         height: "140px",
         opacity,
-        pointerEvents: opacity.get()  === 0 ? "none" : "auto", // 添加这一行
+        pointerEvents,
       }}
     >
       <Image
