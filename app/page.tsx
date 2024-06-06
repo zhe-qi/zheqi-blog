@@ -15,6 +15,7 @@ export default async function Home() {
         fill
         style={{
           objectFit: "cover",
+          height: "auto"
         }}
       />
     </main>
