@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 233, 233, 233;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -30,4 +30,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+html:not(.enable-pinch-to-zoom) body {
+  /* Prevent arbitrary zooming on mobile devices */
+  touch-action: pan-x pan-y;
+}
+
+html[dir="rtl"] .rtl-flip {
+  transform: scale(-1, 1)
 }

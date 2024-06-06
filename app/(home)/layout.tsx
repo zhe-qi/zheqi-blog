@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/The/header";
+import dynamic from "next/dynamic";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({
+  weight: ["400", "500"],
+  preload: false,
+});
 
 export const metadata: Metadata = {
   title: "ZheQi-Blog",
   description: "A blog about web development and programming.",
 };
+
+const Header = dynamic(() => import("@/components/The/header"));
 
 export default function RootLayout({
   children,
@@ -19,7 +24,6 @@ export default function RootLayout({
     <html lang="zh-CN">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="reload" href="image.src" as="image" />
       </head>
       <body className={inter.className}>
         <Header />
