@@ -45,7 +45,7 @@ export default defineConfig({
       'link',
       {
         rel: 'icon',
-        href: '/favicon.ico'
+        href: '/assets/star.svg'
       }
     ],
     [
@@ -102,7 +102,7 @@ export default defineConfig({
         }
       }
     },
-    logo: '/assets/start.png',
+    logo: '/assets/star.svg',
     nav: [
       {
         text: '博客导航',
