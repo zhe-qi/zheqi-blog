@@ -1,7 +1,16 @@
 {
     "cSpell.words": [
-        "nextui",
+        "compat",
+        "iconify",
+        "Nuxt",
+        "Pinia",
+        "postcss",
+        "shiki",
+        "shikijs",
         "tailwindcss",
+        "twoslash",
+        "Vite",
+        "vitepress",
         "zheqi"
     ]
 }
