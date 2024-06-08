@@ -12,10 +12,20 @@ import './custom.css'
 import type { EnhanceAppContext } from 'vitepress'
 import type { Theme } from 'vitepress'
 
+import PrimeVue from 'primevue/config'
+import Aura from 'primevue/themes/aura'
+import Button from "primevue/button"
+
 export default {
-    extends: DefaultTheme,
-    Layout,
-    enhanceApp({ app }: EnhanceAppContext) {
-        app.use(TwoslashFloatingVue)
-    }
+  extends: DefaultTheme,
+  Layout,
+  enhanceApp({ app }: EnhanceAppContext) {
+    app.use(TwoslashFloatingVue)
+    app.use(PrimeVue, {
+      theme: {
+        preset: Aura
+      }
+    })
+    app.component('Button', Button)
+  }
 } satisfies Theme

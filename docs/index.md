@@ -29,19 +29,20 @@ type Hello = {
   interests: string[];
 };
 
-type WelcomeMessage<T extends Hello> = `${T['hello']}, 
-欢迎来到我的博客! 内容包括: ${string}.`;
+type WelcomeMessage<T extends Hello> 
+  = `${T['hello']}, 欢迎来到我的博客! 
+内容包括: ${string}.`;
 
 const hello: Hello = {
   hello: "你好",
   interests: ["编程", "分享"]
 };
 
-function generateWelcomeMessage<T extends Hello>(hello: T): 
-WelcomeMessage<T> {
+function generateWelcomeMessage<T extends Hello>
+(hello: T): WelcomeMessage<T> {
     const interests = hello.interests.join(', ');
     return `${hello.hello}, 欢迎来到我的博客! 
-    内容包括: ${interests}.` as WelcomeMessage<T>;
+内容包括: ${interests}.` as WelcomeMessage<T>;
 }
 
 console.log(generateWelcomeMessage(hello));

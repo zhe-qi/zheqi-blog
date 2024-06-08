@@ -35,6 +35,9 @@ importers:
       postcss-preset-env:
         specifier: ^9.5.14
         version: 9.5.14(postcss@8.4.38)
+      primevue:
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(vue@3.4.27(typescript@5.4.5))
       shiki:
         specifier: ^1.6.3
         version: 1.6.3
@@ -1878,6 +1881,12 @@ packages:
   pretty-hrtime@1.0.3:
     resolution: {integrity: sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==}
     engines: {node: '>= 0.8'}
+
+  primevue@4.0.0-beta.4:
+    resolution: {integrity: sha512-5ziY7gr1tRmCpK8LSAYgfdOyljLbHoxs2LCOTApB5jMZeAOeFRdIRHfUtCCLevX84azQJn+Bac8g43OCIzutlA==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.0.0
 
   punycode.js@2.3.1:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
@@ -4223,6 +4232,10 @@ snapshots:
   preact@10.22.0: {}
 
   pretty-hrtime@1.0.3: {}
+
+  primevue@4.0.0-beta.4(vue@3.4.27(typescript@5.4.5)):
+    dependencies:
+      vue: 3.4.27(typescript@5.4.5)
 
   punycode.js@2.3.1: {}
 

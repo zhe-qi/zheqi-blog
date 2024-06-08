@@ -1,5 +1,5 @@
 <template>
-  <link rel="preload" as="image" href="/assets/elysia_v.webp" />
+  <link rel="preload" as="image" href="/assets/zheqi-blog.webp" />
   <Ray
     class="h-[60vh] -top-16 pointer-events-none opacity-[.35] dark:opacity-50"
   />
@@ -13,7 +13,7 @@
   >
     <img
       src="/assets/zheqi-blog.webp"
-      alt="Curved text logo saying 'Elysia JS'"
+      alt="ZheQi-Blog"
       class="max-w-[40ch] w-full translate-y-[-40px] rounded-xl object-contain object-left md:object-center mr-auto md:mr-0"
       style="aspect-ratio: 1 / 1"
     />
@@ -92,12 +92,13 @@
     <section
       class="flex flex-col translate-y-[-50px]  sm:flex-row items-start sm:items-center w-full md:w-auto gap-4 mt-10 mb-12"
     >
-      <a
+      <!-- <a
         class="text-white font-medium text-lg bg-zinc-300 dark:bg-zinc-800 px-6 py-2.5 rounded-full"
         href="/at-glance"
       >
         跳转查看
-      </a>
+      </a> -->
+      <Button>跳转查看</Button>
       <div class="relative flex flex-1 gap-3 text-blue-500">
         <code
           class="text-blue-500 font-mono font-medium text-lg bg-sky-100 dark:bg-blue-500/20 px-6 py-2.5 rounded-full"
@@ -157,7 +158,7 @@ const copied = ref(false)
 watch(copied, (value) => {
   // [INFO] navigator.clipboard available only in secure contexts.
   if (value && window.isSecureContext) {
-    navigator.clipboard.writeText('bun create elysia app')
+    navigator.clipboard.writeText('https://zheqi.netlify.app')
 
     setTimeout(() => {
       copied.value = false
