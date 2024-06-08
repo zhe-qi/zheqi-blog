@@ -9,7 +9,7 @@
       <h3
         class="text-5xl mb-4 leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-br from-green-300 to-sky-300"
       >
-        为什么选择ZheQi-Blog?
+        为什么查看ZheQi-Blog?
       </h3>
       <p class="text-xl leading-normal text-gray-400 w-full max-w-lg mb-4">
         丰富的编程内容: 无论你是初学者还是有经验的开发者，这里都有适合你的内容。

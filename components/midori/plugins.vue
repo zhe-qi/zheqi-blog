@@ -25,7 +25,7 @@ const isDark = useDark()
         <h2
           class="text-5xl md:text-6xl leading-tight font-bold bg-clip-text text-transparent bg-gradient-to-tr from-sky-400 to-fuchsia-400 mb-4"
         >
-          使用的技术栈
+          掌握的技术栈
         </h2>
       </header>
       <p class="text-xl text-gray-400 w-full max-w-lg mb-4">

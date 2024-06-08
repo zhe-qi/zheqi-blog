@@ -24,16 +24,27 @@ import Landing from '../components/midori/index.vue'
   <template v-slot:justreturn>
   
 ```typescript twoslash
-import { Elysia } from 'elysia'
+type User = {
+  name: string;
+  interests: string[];
+};
 
-new Elysia()
-    .get('/', 'Hello World')
-    .get('/json', {
-        hello: 'world'
-    })
-    .get('/id/:id', ({ params: { id } }) => id)
-    .listen(3000)
+type WelcomeMessage<T extends User> = `欢迎来到我的博客, 
+${T['name']}! 你喜欢的内容包括: ${T['interests'][number]}.`;
 
+const user: User = {
+  name: "朋友",
+  interests: ["TypeScript", "编程", "技术博客"]
+};
+
+function generateWelcomeMessage<T extends User>(user: T): 
+WelcomeMessage<T> {
+    const interests = user.interests.join(', ');
+    return `欢迎来到我的博客, ${user.name}! 
+    你喜欢的内容包括: ${interests}.` as WelcomeMessage<T>;
+  }
+
+console.log(generateWelcomeMessage(user))
 ```
 
   </template>
