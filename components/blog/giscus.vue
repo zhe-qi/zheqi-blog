@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Giscus from '@giscus/vue'
+import useDark from '../midori/use-dark';
+
+const isDark = useDark();
 </script>
 
 <template>
@@ -14,7 +17,7 @@ import Giscus from '@giscus/vue'
       reactions-enabled="1"
       emit-metadata="0"
       input-position="top"
-      theme="preferred_color_scheme"
+      :theme="isDark ? 'cobalt' : 'preferred_color_scheme'"
       lang="zh-CN"
       loading="lazy"
       crossorigin="anonymous"

@@ -97,6 +97,10 @@ button.copy::after {
   background-position: 0 50%;
 }
 
+.VPMenu {
+  @apply !backdrop-blur !bg-[#ffffffaa] !shadow-none;
+}
+
 #VPSidebarNav > .group {
   @apply border-t-0;
 
