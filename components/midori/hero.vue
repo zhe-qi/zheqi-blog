@@ -14,8 +14,7 @@
     <img
       src="/assets/zheqi-blog.webp"
       alt="ZheQi-Blog"
-      class="max-w-[40ch] w-full translate-y-[-40px] rounded-xl object-contain object-left md:object-center mr-auto md:mr-0"
-      style="aspect-ratio: 1 / 1"
+      class="h-[400px] w-[400px] translate-y-[-40px] rounded-xl object-contain object-left md:object-center mr-auto md:mr-0"
     />
     <h2
       class="relative translate-y-[-100px] text-5xl md:text-6xl md:leading-tight font-bold md:text-center leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-sky-400 mb-6"
