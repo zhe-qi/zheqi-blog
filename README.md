@@ -1,2 +1,2 @@
 ## Elysia documentation
-Written by VitePress
+Written by VitePress and elysia-documents

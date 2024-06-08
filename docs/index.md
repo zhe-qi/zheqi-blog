@@ -24,27 +24,27 @@ import Landing from '../components/midori/index.vue'
   <template v-slot:justreturn>
   
 ```typescript twoslash
-type User = {
-  name: string;
+type Hello = {
+  hello: string;
   interests: string[];
 };
 
-type WelcomeMessage<T extends User> = `欢迎来到我的博客, 
-${T['name']}! 你喜欢的内容包括: ${T['interests'][number]}.`;
+type WelcomeMessage<T extends Hello> = `${T['hello']}, 
+欢迎来到我的博客! 内容包括: ${string}.`;
 
-const user: User = {
-  name: "朋友",
-  interests: ["TypeScript", "编程", "技术博客"]
+const hello: Hello = {
+  hello: "你好",
+  interests: ["编程", "分享"]
 };
 
-function generateWelcomeMessage<T extends User>(user: T): 
+function generateWelcomeMessage<T extends Hello>(hello: T): 
 WelcomeMessage<T> {
-    const interests = user.interests.join(', ');
-    return `欢迎来到我的博客, ${user.name}! 
-    你喜欢的内容包括: ${interests}.` as WelcomeMessage<T>;
-  }
+    const interests = hello.interests.join(', ');
+    return `${hello.hello}, 欢迎来到我的博客! 
+    内容包括: ${interests}.` as WelcomeMessage<T>;
+}
 
-console.log(generateWelcomeMessage(user))
+console.log(generateWelcomeMessage(hello));
 ```
 
   </template>
