@@ -92,8 +92,8 @@
       class="flex flex-col translate-y-[-50px]  sm:flex-row items-start sm:items-center w-full md:w-auto gap-4 mt-10 mb-12"
     >
       <a
-        class="text-white font-medium text-lg bg-zinc-300 dark:bg-zinc-800 px-6 py-2.5 rounded-full"
-        href="/at-glance"
+        class="text-white font-medium text-lg bg-blue-300 dark:bg-blue-300/25 dark:text-white/80 px-6 py-2.5 rounded-full"
+        href="/blog"
       >
         跳转查看
       </a>

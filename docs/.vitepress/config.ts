@@ -110,28 +110,34 @@ export default defineConfig({
       },
       {
         text: '项目分享',
-        link: '/plugins/project'
+        link: '/project'
       },
       {
         text: '友情链接',
         link: '/friend'
       }
     ],
-    sidebar: [
-      {
-        text: '博客1',
-        items: [
-          {
-            text: '这是一级菜单',
-            link: '/blog1'
-          },
-          {
-            text: '这是二级菜单',
-            link: '/blog2'
-          }
-        ]
-      }
-    ],
+    outline: {
+      label: '文章目录'
+    },
+    sidebar: {
+      '/blog/': [
+        {
+          text: '介绍',
+          collapsed: true,
+          items: [
+            {
+              text: '前言',
+              link: '/blog/'
+            },
+            {
+              text: '关于我',
+              link: '/blog/about'
+            }
+          ]
+        }
+      ]
+    },
     socialLinks: [
       { icon: 'github', link: '#' },
       {

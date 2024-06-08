@@ -8,6 +8,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@iconify/json": "^2.2.217",
     "@shikijs/vitepress-twoslash": "^1.6.3",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
@@ -23,8 +24,10 @@
     "vite-plugin-icons": "^0.6.5"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.2",
     "cheerio": "1.0.0-rc.12",
+    "daisyui": "^4.12.2",
     "markdown-it": "^14.1.0",
     "typescript": "^5.4.5",
     "view-transitions-api-types": "^0.1.1",

@@ -13,9 +13,9 @@ body {
 }
 
 :root {
-  --vp-c-brand-1: #f06292;
-  --vp-c-brand-light: #ff94c2;
-  --vp-c-brand-dark: #ba2d65;
+  --vp-c-brand-1: #f1709bf0;
+  --vp-c-brand-light: #faa4c9fc;
+  --vp-c-brand-dark: #df558ce6;
   --vp-code-block-bg: #f6f8fa;
   --vp-code-copy-code-bg: #dedede;
   --vp-code-copy-code-hover-bg: #dedede;
@@ -76,57 +76,77 @@ button.copy::after {
 
 /* .VPNavBarTitle > a > span {
     @apply hidden;
-}
+} */
 
 .logo {
-    @apply hidden;
-} */
+  @apply w-8 h-8;
+}
 
 #embedded-editor {
   @apply my-6 h-[720px] w-full rounded-lg border-0;
+}
+
+#VPSidebarNav > .group > .VPSidebarItem > .item > .text::before {
+  @apply mr-2 block w-4 h-4 bg-cover;
+  content: '';
+}
+
+#VPSidebarNav > .group:nth-child(2) > .VPSidebarItem > .item > .text {
+  background-image: url(/assets/blog-star.svg) !important;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
 }
 
 #VPSidebarNav > .group {
   @apply border-t-0;
 
   & > .VPSidebarItem {
-    @apply pb-2;
+    @apply pb-1;
+
+    & > .item > .text {
+      @apply flex items-center text-base py-1.5;
+    }
+
+    & > .item {
+      @apply mb-2 px-2;
+    }
 
     & > .items {
-      & > div {
-        @apply pl-4 mb-0.5 dark:border-l-gray-600 rounded-lg;
-
-        &:hover,
-        &:focus {
-          background-color: var(--vp-c-brand-nav-active);
-        }
-
-        &.is-active.has-active {
-          background-color: var(--vp-c-brand-nav-active);
-        }
-      }
-
       & > .VPSidebarItem {
-        @apply pl-4 mb-0.5 dark:border-l-gray-600 rounded-lg;
+        @apply pl-4 rounded-none transition-all mb-2 duration-150 ease-out;
 
-        & > div {
-          & > div {
-            @apply pl-2 mb-0.5 dark:border-l-gray-600 rounded-lg -translate-x-2;
-
-            &:hover,
-            &:focus {
-              background-color: var(--vp-c-brand-nav-active);
+        /* Separation between nested table of content */
+        &:not(.collapsible),
+        &.collapsible > .items > .VPSidebarItem {
+          &:hover,
+          &:focus,
+          &.is-active.has-active {
+            & .indicator {
+              width: 0 !important;
             }
+            @apply rounded-lg border-transparent;
 
-            &.is-active.has-active {
-              background-color: var(--vp-c-brand-nav-active);
-            }
+            background-color: var(--vp-c-brand-nav-active);
+
+            /* & > .item > .indicator {
+              background-color: var(--vp-c-brand-1);
+            } */
           }
+        }
 
-          & > .caret {
-            &:hover,
-            &:focus {
-              background-color: transparent;
+        &.collapsible {
+          & > .items {
+            @apply border-0 pl-0;
+
+            & > .VPSidebarItem {
+              @apply pl-4;
+            }
+
+            & > .caret {
+              &:hover,
+              &:focus {
+                background-color: transparent;
+              }
             }
           }
         }
@@ -134,15 +154,6 @@ button.copy::after {
     }
   }
 }
-
-/* .VPLocalNav {
-    background-color: rgba(255, 255, 255, .7) !important;
-    backdrop-filter: blur(12px);
-    
-    & > .container {
-        background-color: transparent;
-    }
-} */
 
 .mockup-browser-toolbar > .input::before {
   width: 12px;
@@ -184,23 +195,6 @@ button.copy::after {
       background: color-mix(in srgb, var(--vp-c-bg) 80%, transparent);
     }
   }
-
-  /* Curtain is removed from VitePress? */
-  /* & > .container > .content {
-        border-bottom: 0;
-
-        & > .curtain::before {
-            backdrop-filter: blur(12px);
-            background: linear-gradient(
-                var(--vp-nav-bg-color),
-                transparent 100%
-            ) !important;
-        }
-
-        & > .content-body {
-            background-color: transparent;
-        }
-    } */
 }
 
 .md-table {
@@ -238,38 +232,3 @@ button.copy::after {
 .vp-doc > * > video {
   @apply rounded-lg shadow-xl;
 }
-
-/* Wait until Vitepress provide support for view transition */
-/* .VPSidebar {
-    page-transition-tag: sidebar;
-}
-
-.VPNav {
-    page-transition-tag: nav;
-}
-
-.VPDoc {
-    page-transition-tag: doc;
-}
-
-::page-transition-incoming-image(root) {
-    animation: 500ms ease-out both document-enter;
-}
-
-@keyframes document-enter {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-}
-
-::page-transition-out-going-image(root) {
-    animation: 500ms ease-out both document-leave;
-}
-
-@keyframes document-leave {
-    to {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-} */

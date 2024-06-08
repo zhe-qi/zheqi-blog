@@ -26,9 +26,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     )}px at ${x}px ${y}px)`
   ]
 
-  // @ts-expect-error `startViewTransition` is not yet in the TS lib
   if (document.startViewTransition !== undefined)
-    // @ts-expect-error `startViewTransition` is not yet in the TS lib
     await document.startViewTransition(async () => {
       darkTheme.value = !darkTheme.value
       await nextTick()
