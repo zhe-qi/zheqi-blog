@@ -10,6 +10,7 @@ import './midori.css'
 <template>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+  <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">
     <Hero />

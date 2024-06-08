@@ -92,13 +92,12 @@
     <section
       class="flex flex-col translate-y-[-50px]  sm:flex-row items-start sm:items-center w-full md:w-auto gap-4 mt-10 mb-12"
     >
-      <!-- <a
+      <a
         class="text-white font-medium text-lg bg-zinc-300 dark:bg-zinc-800 px-6 py-2.5 rounded-full"
         href="/at-glance"
       >
         跳转查看
-      </a> -->
-      <Button>跳转查看</Button>
+      </a>
       <div class="relative flex flex-1 gap-3 text-blue-500">
         <code
           class="text-blue-500 font-mono font-medium text-lg bg-sky-100 dark:bg-blue-500/20 px-6 py-2.5 rounded-full"
