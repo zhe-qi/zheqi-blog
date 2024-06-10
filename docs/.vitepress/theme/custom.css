@@ -98,7 +98,7 @@ button.copy::after {
 }
 
 .VPMenu {
-  @apply !backdrop-blur !bg-[#ffffffaa] !shadow-none;
+  @apply !backdrop-blur !bg-[#ffffffaa] dark:!bg-[#00000099] !shadow-none;
 }
 
 #VPSidebarNav > .group {
@@ -184,8 +184,8 @@ button.copy::after {
 
 .VPNavBar {
   @apply !border-0 dark:!bg-slate-900/70;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(16px);
 
   /* & > .divider {
     @apply !bg-green-500;

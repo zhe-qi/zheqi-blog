@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const plugins = [
   ['Vue', '/assets/vue.svg', ''],
   ['Nuxt', '/assets/nuxt.svg', ''],
@@ -14,6 +16,47 @@ const plugins = [
 import useDark from './use-dark'
 
 const isDark = useDark()
+
+// 鼠标动画效果的脚本
+const boxes = ref<HTMLDivElement[] | null>(null)
+let animationFrameId: number | null = null
+
+function handlerMove(e: MouseEvent) {
+  if (animationFrameId !== null) {
+    cancelAnimationFrame(animationFrameId)
+  }
+  animationFrameId = requestAnimationFrame(() => {
+    if (!boxes.value) return
+    for (const el of boxes.value) {
+      const rect = el.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      el.style.setProperty('--x', `${x}px`)
+      el.style.setProperty('--y', `${y}px`)
+    }
+  })
+}
+
+function handlerLeave() {
+  if (!boxes.value) return
+  for (const el of boxes.value) {
+    el.style.setProperty('--x', `-1000px`)
+    el.style.setProperty('--y', `-1000px`)
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('mousemove', handlerMove)
+  document.addEventListener('mouseleave', handlerLeave)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', handlerMove)
+  document.removeEventListener('mouseleave', handlerLeave)
+  if (animationFrameId !== null) {
+    cancelAnimationFrame(animationFrameId)
+  }
+})
 </script>
 
 <template>
@@ -49,12 +92,16 @@ const isDark = useDark()
       >
         <li
           v-for="[name, icon, href, darkIcon = ''] in plugins"
-          class="aspect-square rounded-xl border dark:border-gray-700 bg-gradient-to-br from-white to-gray-50 dark:from-gray-700/75 dark:to-gray-800/75 text-xl transform transition-all ease-out duration-200 hover:shadow-lg focus:shadow-lg hover:-translate-y-1.5 focus:-translate-y-1.5"
+          class="aspect-square border rounded-xl relative overflow-hidden dark:border-gray-700 bg-gradient-to-br from-white to-gray-50 dark:from-gray-700/75 dark:to-gray-800/75 text-xl transform transition-all ease-out duration-200 hover:shadow-lg focus:shadow-lg hover:-translate-y-1.5 focus:-translate-y-1.5"
+          ref="boxes"
         >
+          <div class="border-effect"></div>
+          <div class="bg-gradient"></div>
+          <div class="glass-effect"></div>
           <a
             :href="href"
             :target="href.startsWith('http') ? '_blank' : ''"
-            class="flex flex-col justify-center items-center gap-3 w-full h-full text-lg font-medium text-gray-600 dark:text-gray-400 overflow-hidden"
+            class="flex flex-col justify-center items-center gap-3 w-full h-full text-lg font-medium text-gray-600 dark:text-gray-400 relative z-10"
           >
             <img
               :src="isDark && darkIcon ? darkIcon ?? icon : icon"
@@ -75,3 +122,54 @@ const isDark = useDark()
     </section>
   </article>
 </template>
+
+<style scoped>
+.border-effect {
+  position: absolute;
+  inset: 2px;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  border-image: radial-gradient(circle, cyan 0%, skyblue 25%, pink 50%, transparent 75%) 1;
+  transition: border 0.1s;
+  z-index: 1;
+}
+
+.bg-gradient {
+  position: absolute;
+  inset: 2px;
+  /* background: linear-gradient(135deg, #ffffff, #f0f0f0); */
+  @apply bg-gradient-to-br from-white to-gray-50 dark:from-slate-950 dark:to-slate-950;
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.glass-effect {
+  position: absolute;
+  inset: 2px;
+  backdrop-filter: blur(10px);
+  @apply bg-white/40 dark:bg-slate-400/10;
+  border-radius: inherit;
+  z-index: 3;
+}
+
+li::before {
+  top: var(--y, -1000px);
+  left: var(--x, -1000px);
+  content: '';
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: inherit;
+  background: radial-gradient(circle, cyan 0%, skyblue 25%, pink 50%, transparent 75%);
+  transition: top 0.1s, left 0.1s;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+li {
+  position: relative;
+  overflow: hidden;
+  /* border-radius: inherit; */
+}
+</style>

@@ -14,7 +14,7 @@ head:
 
 欢迎来到我的博客! 这里是`折七`的博客，我会在这里分享技术、生活、读书、随笔等内容。
 
-这个博客是基于 [VitePress](https://vitepress.vuejs.org/) 搭建的，它是一个 Vue 驱动的静态网站生成器，它的目标是尽可能简单，同时也是非常灵活的。VitePress 本身是一个 Vue 3 项目，它使用了 Vite 作为构建工具，这使得它在开发和构建速度上都有很大的提升。
+这个博客是基于 [VitePress](https://vitepress.vuejs.org/) 搭建的，它是一个 Vue 驱动的静态网站生成器，它的目标是尽可能简单，同时也是非常灵活的。
 
 这个博客的文档模板来自 [ElysiaJS](https://elysiajs.com/) 官方文档，它是一个基于 Vitepress 的 技术文档，它的文档模板非常漂亮，我非常喜欢，所以我就拿来用了。
 
