@@ -92,7 +92,7 @@ onUnmounted(() => {
       >
         <li
           v-for="[name, icon, href, darkIcon = ''] in plugins"
-          class="aspect-square border rounded-xl relative overflow-hidden dark:border-gray-700 bg-gradient-to-br from-white to-gray-50 dark:from-gray-700/75 dark:to-gray-800/75 text-xl transform transition-all ease-out duration-200 hover:shadow-lg focus:shadow-lg hover:-translate-y-1.5 focus:-translate-y-1.5"
+          class="aspect-square border rounded-xl relative overflow-hidden dark:border-none bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-900 text-xl transform transition-all ease-out duration-200 hover:shadow-lg focus:shadow-lg hover:-translate-y-1.5 focus:-translate-y-1.5"
           ref="boxes"
         >
           <div class="border-effect"></div>
@@ -148,7 +148,7 @@ onUnmounted(() => {
   position: absolute;
   inset: 2px;
   backdrop-filter: blur(10px);
-  @apply bg-white/40 dark:bg-slate-400/10;
+  @apply bg-white dark:bg-white/10;
   border-radius: inherit;
   z-index: 3;
 }
