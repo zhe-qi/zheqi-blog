@@ -12,6 +12,8 @@ head:
         content: ZheQi-Blog 折七的博客 快捷导航 页面
 ---
 
-ZheQi-Blog - 快捷导航
+<script setup>
+import Guide from '../../components/guide.vue';
+</script>
 
-这个页面后续用vue组件搭成快捷导航网址，方便查找。
+<Guide />
