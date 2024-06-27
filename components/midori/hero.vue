@@ -1,8 +1,4 @@
 <template>
-  <link rel="preload" as="image" href="/assets/zheqi-blog.webp" />
-  <Ray
-    class="h-[60vh] -top-16 pointer-events-none opacity-[.35] dark:opacity-50"
-  />
   <div
     id="splash"
     class="pointer-events-none absolute top-[-70vh] max-w-full justify-center w-full h-screen opacity-25 block gradient"
@@ -10,14 +6,15 @@
   <header
     class="relative flex flex-col justify-center items-center w-full px-6 pt-6 md:pt-0 mb-16 md:mb-8 overflow-hidden"
     style="min-height: calc(100vh - 64px)"
+    :class="{ 'brightness-[0.9]': isDark }"
   >
-    <img
+    <!-- <img
       src="/assets/zheqi-blog.webp"
       alt="ZheQi-Blog"
       class="h-[400px] w-[400px] translate-y-[-40px] rounded-xl object-contain object-left md:object-center mr-auto md:mr-0"
-    />
+    /> -->
     <h2
-      class="relative translate-y-[-100px] text-5xl md:text-6xl md:leading-tight font-bold md:text-center leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-sky-400 mb-6"
+      class="relative mt-[20vh] text-5xl md:text-6xl md:leading-tight font-bold md:text-center leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-sky-400 mb-6"
     >
       ZheQi-Blog
       <span
@@ -81,52 +78,14 @@
       </span>
     </h2>
     <h3
-      class="text-xl translate-y-[-80px] md:text-2xl text-gray-500 dark:text-gray-400 !leading-normal text-left md:text-center w-full max-w-[49rem]"
+      class="text-xl shadow-white md:text-2xl text-white !leading-normal text-left md:text-center w-full max-w-[49rem]"
     >
       折七Blog，<span
         class="text-transparent font-semibold bg-clip-text bg-gradient-to-r from-red-300 to-pink-300"
         >记录学习笔记</span
       >
     </h3>
-    <section
-      class="flex flex-col translate-y-[-50px]  sm:flex-row items-start sm:items-center w-full md:w-auto gap-4 mt-10 mb-12"
-    >
-      <a
-        class="text-white font-medium text-lg bg-blue-300 dark:bg-blue-300/25 dark:text-white/80 px-6 py-2.5 rounded-full"
-        href="/blog"
-      >
-        跳转查看
-      </a>
-      <div class="relative flex flex-1 gap-3 text-blue-500">
-        <code
-          class="text-blue-500 font-mono font-medium text-lg bg-sky-100 dark:bg-blue-500/20 px-6 py-2.5 rounded-full"
-        >
-          https://zheqi.netlify.app
-        </code>
-        <button
-          class="hidden sm:inline-flex p-3 rounded-2xl active:rounded-full hover:bg-blue-200/25 focus:bg-blue-200/25 active:bg-blue-200/50 hover:dark:bg-blue-500/20 focus:dark:bg-blue-500/20 active:dark:bg-blue-500/20 transition-all"
-          @click="copied = true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-copy"
-          >
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-        </button>
-        <p v-if="copied" className="absolute -bottom-8 right-0">Copied</p>
-      </div>
-    </section>
-    <p class="flex justify-center items-center gap-2 text-gray-400">
+    <p class="flex justify-center items-center mt-10 gap-2 text-white">
       查看更多
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +108,9 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
+import useDark from './use-dark'
 
-import Ray from './ray.vue'
+const isDark = useDark()
 
 const copied = ref(false)
 watch(copied, (value) => {

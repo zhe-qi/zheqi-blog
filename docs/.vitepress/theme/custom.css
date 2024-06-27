@@ -183,13 +183,13 @@ button.copy::after {
 }
 
 .VPNavBar {
-  @apply !border-0 dark:!bg-slate-900/70;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(16px);
+  @apply !border-0 dark:bg-white/0;
+  background-color: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(0);
 
-  /* & > .divider {
-    @apply !bg-green-500;
-  } */
+  & > .divider {
+    @apply hidden;
+  }
 
   & > .container {
     /* background-color: rgba(255, 255, 255, .6) !important; */
