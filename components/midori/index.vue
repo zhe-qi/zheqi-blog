@@ -56,11 +56,15 @@ onBeforeUnmount(() => {
 <template>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-  <link rel="preload" as="image" href="/assets/3_15488489005909.mp4" />
+  <link rel="preload" as="video" href="/assets/freecompress-3_15488489005909.webm">
   <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">
-    <video :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted class="w-screen h-screen object-cover" src="/assets/3_15488489005909.mp4"></video>
+    <video :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted class="w-screen h-screen object-cover"
+      >
+      <source src="/assets/freecompress-3_15488489005909.webm" type="video/webm">
+      <source src="/assets/freecompress-3_15488489005909.mp4" type="video/mp4">
+    </video>
     <Water class="mt-[-8vh]" />
     <Ray class="h-[60vh] -top-16 pointer-events-none opacity-[.35] dark:opacity-50" />
     <div class="mt-[-90vh]">
