@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
 <template>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-  <link rel="preload" as="video" href="/assets/freecompress-3_15488489005909.webm">
+  <link rel="prefetch" as="video" href="/assets/freecompress-3_15488489005909.webm">
   <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">

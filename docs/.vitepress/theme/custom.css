@@ -177,6 +177,10 @@ button.copy::after {
   }
 }
 
+#VPContent {
+  padding-top: 0;
+}
+
 .VPNavBar {
   border: 0 !important;
   box-shadow: none !important;
