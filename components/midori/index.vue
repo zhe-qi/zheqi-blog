@@ -51,6 +51,10 @@ onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
   document.querySelector('#VPContent')?.setAttribute('style', 'padding-top: var(--vp-nav-height) !important;')
 })
+
+const base64 =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNgYFRcMnfV/y9/GbkVGdjUnDNzW1JyOxhYlAF40Ah0YMgUXQAAAABJRU5ErkJggg==";
+
 </script>
 
 <template>
@@ -60,7 +64,7 @@ onBeforeUnmount(() => {
   <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">
-    <video :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted class="w-screen h-screen object-cover"
+    <video :poster="base64" :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted class="w-screen h-screen object-cover"
       >
       <source src="/assets/freecompress-3_15488489005909.webm" type="video/webm">
       <source src="/assets/freecompress-3_15488489005909.mp4" type="video/mp4">
