@@ -1,5 +1,5 @@
 ---
-title: ZheQi-Blog - 介绍
+title: 介绍
 head:
     - - meta
       - property: 'og:title'

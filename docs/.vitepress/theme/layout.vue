@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide } from 'vue'
+import { nextTick, onMounted, provide } from 'vue'
 
 import { useData } from 'vitepress'
 import useDark from '../../../components/midori/use-dark'
@@ -41,15 +41,24 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     }
   )
 })
+
+onMounted(() => {
+  // 判断当前是否首页 
+  if (window.location.pathname !== '/') {
+    const vpContent = document.querySelector('#VPContent');
+    const newStyle = 'padding-top: var(--vp-nav-height) !important;';
+    // 只有在样式实际更改时才设置新样式
+    if (vpContent && vpContent.getAttribute('style') !== newStyle) {
+      vpContent.setAttribute('style', newStyle);
+    }
+  }
+})
 </script>
 
 <template>
   <DefaultTheme.Layout>
     <template #doc-top>
-      <Ray
-        class="h-[220px] top-0 left-0 opacity-25 dark:opacity-[.55] pointer-events-none"
-        static
-      />
+      <Ray class="h-[220px] top-0 left-0 opacity-25 dark:opacity-[.55] pointer-events-none" static />
     </template>
   </DefaultTheme.Layout>
 </template>

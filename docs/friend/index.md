@@ -1,5 +1,5 @@
 ---
-title: ZheQi-Blog - 友情链接
+title: 友情链接
 head:
     - - meta
       - property: 'og:title'

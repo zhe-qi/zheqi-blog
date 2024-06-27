@@ -1,5 +1,5 @@
 ---
-title: ZheQi-Blog - 折七的博客
+title: ZheQi-Blog
 layout: page
 sidebar: false
 head:

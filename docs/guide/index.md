@@ -1,5 +1,5 @@
 ---
-title: ZheQi-Blog - 快捷导航
+title: 快捷导航
 layout: page
 sidebar: false
 head:

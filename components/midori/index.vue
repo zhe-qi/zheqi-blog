@@ -49,7 +49,12 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
-  document.querySelector('#VPContent')?.setAttribute('style', 'padding-top: var(--vp-nav-height) !important;')
+  const vpContent = document.querySelector('#VPContent');
+  const newStyle = 'padding-top: var(--vp-nav-height) !important;';
+  // 只有在样式实际更改时才设置新样式
+  if (vpContent && vpContent.getAttribute('style') !== newStyle) {
+    vpContent.setAttribute('style', newStyle);
+  }
 })
 
 const base64 =
@@ -64,8 +69,8 @@ const base64 =
   <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">
-    <video :poster="base64" :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted class="w-screen h-screen object-cover"
-      >
+    <video :poster="base64" :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted
+      class="w-screen h-screen object-cover">
       <source src="/assets/freecompress-3_15488489005909.webm" type="video/webm">
       <source src="/assets/freecompress-3_15488489005909.mp4" type="video/mp4">
     </video>
