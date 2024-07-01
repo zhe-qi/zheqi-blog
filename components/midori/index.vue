@@ -15,7 +15,7 @@ const isDark = useDark()
 const flag = ref(false)
 
 const handleScroll = () => {
-  if (window.scrollY > 177) {
+  if (window.scrollY > 277) {
     if (flag.value) return
     if (isDark.value) {
       document.querySelector('.VPNavBar')?.classList.add('!bg-dark/70', 'backdrop-blur-2xl')
@@ -65,6 +65,13 @@ const videoRef = ref<HTMLVideoElement | null>(null)
 onMounted(() => {
   (document as any).addEventListener('WeixinJSBridgeReady', videoRef.value?.play());
 })
+
+const backTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <template>
@@ -93,10 +100,27 @@ onMounted(() => {
         </section>
       </article>
     </div>
+    <transition name="fade">
+      <img @click="backTop" v-if="flag" src="/assets/lolisister2.gif" class="fixed bottom-16 right-12 w-36 cursor-pointer" />
+    </transition>
   </div>
 </template>
 
 <style>
+/* 定义渐入动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active 在 <2.1.8 版本中 */
+  {
+  opacity: 0;
+}
+
 #landing div[class*='language-']>pre>code {
   display: block;
   width: -moz-fit-content;
