@@ -21,6 +21,9 @@
       <p class="text-xl leading-normal text-gray-400 w-full max-w-lg mb-4">
         互动社区: 加入我们的讨论，分享你的见解，向其他开发者学习。
       </p>
+      <p class="text-xl leading-normal text-gray-400 w-full max-w-lg mb-4">
+        首页滚动卡顿：因为左边的代码块是有类型提示的，第三方优化没做好。
+      </p>
     </header>
   </article>
 </template>

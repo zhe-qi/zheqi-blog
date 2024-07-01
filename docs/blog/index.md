@@ -2,10 +2,6 @@
 title: 介绍
 head:
     - - meta
-      - property: 'og:title'
-        content: ZheQi-Blog - 介绍
-
-    - - meta
       - name: 'description'
         content: ZheQi-Blog 折七的博客 分享技术、生活、读书、随笔等内容
 ---

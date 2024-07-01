@@ -60,6 +60,11 @@ onBeforeUnmount(() => {
 const base64 =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNgYFRcMnfV/y9/GbkVGdjUnDNzW1JyOxhYlAF40Ah0YMgUXQAAAABJRU5ErkJggg==";
 
+const videoRef = ref<HTMLVideoElement | null>(null)
+
+onMounted(() => {
+  (document as any).addEventListener('WeixinJSBridgeReady', videoRef.value?.play());
+})
 </script>
 
 <template>
@@ -69,7 +74,8 @@ const base64 =
   <link rel="preload" as="image" href="/assets/star.svg" />
 
   <div id="landing" class="dark:bg-gray-900/60">
-    <video :poster="base64" :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted
+    <video ref="videoRef" :poster="base64" :class="{ 'brightness-[0.7]': isDark }" autoplay loop muted
+      x5-video-player-type="h5-page" webkit-playsinline mtt-playsinline playsinline
       class="w-screen h-screen object-cover">
       <source src="/assets/freecompress-3_15488489005909.webm" type="video/webm">
       <source src="/assets/freecompress-3_15488489005909.mp4" type="video/mp4">

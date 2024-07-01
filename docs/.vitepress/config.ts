@@ -146,6 +146,16 @@ export default defineConfig({
               link: '/blog/about'
             }
           ]
+        },
+        {
+          text: 'Prisma 学习',
+          collapsed: true,
+          items: [
+            {
+              text: 'Prisma 学习笔记 1',
+              link: '/blog/prisma/prisma-blog1'
+            }
+          ]
         }
       ]
     },

@@ -96,6 +96,11 @@ button.copy::after {
   background-repeat: no-repeat;
   background-position: 0 50%;
 }
+#VPSidebarNav > .group:nth-child(3) > .VPSidebarItem > .item > .text {
+  background-image: url(/assets/blog-nest.svg) !important;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
 
 .VPMenu {
   @apply !backdrop-blur !bg-[#ffffffaa] dark:!bg-[#00000099] !shadow-none;
