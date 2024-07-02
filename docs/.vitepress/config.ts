@@ -156,6 +156,16 @@ export default defineConfig({
               link: '/blog/prisma/prisma-blog1'
             }
           ]
+        },
+        {
+          text: 'Git 合集',
+          collapsed: true,
+          items: [
+            {
+              text: 'Git 配置代理',
+              link: '/blog/git/proxy'
+            }
+          ]
         }
       ]
     },

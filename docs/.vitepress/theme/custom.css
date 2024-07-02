@@ -101,6 +101,11 @@ button.copy::after {
   background-repeat: no-repeat;
   background-position: 0 50%;
 }
+#VPSidebarNav > .group:nth-child(4) > .VPSidebarItem > .item > .text {
+  background-image: url(/assets/blog-git.svg) !important;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
 
 .VPMenu {
   @apply !backdrop-blur !bg-[#ffffffaa] dark:!bg-[#00000099] !shadow-none;
