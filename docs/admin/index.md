@@ -11,7 +11,7 @@ head:
 
 ## 环境
 
-- nodejs: v20.12.0
+- nodejs: LTS
 - mysql: 8.0.12
 - redis
 
