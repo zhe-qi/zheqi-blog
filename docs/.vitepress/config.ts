@@ -105,23 +105,12 @@ export default defineConfig({
     logo: '/assets/star.svg',
     nav: [
       {
-        text: '快捷导航',
-        link: '/guide'
-      },
-      {
         text: '博客文章',
         link: '/blog'
       },
       {
-        text: '查看更多',
-        items: [
-          {
-            text: '项目推荐',
-            link: '/project'
-          },
-          { text: '音乐播放器', link: '/music' },
-          { text: 'llama3-chinese', link: '/llama3' }
-        ]
+        text: '后台文档',
+        link: '/admin'
       },
       {
         text: '友情链接',
