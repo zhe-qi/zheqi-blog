@@ -157,11 +157,11 @@ export const Config: config = {
   },
   crypto: {
     //密码加密秘钥
-    psdSecret: process.env.psdSecret || "carole123456",
+    psdSecret: process.env.psdSecret,
   },
   token: {
     // token加密秘钥
-    secret: process.env.tokenSecret || "carole123456",
+    secret: process.env.tokenSecret,
     //过期时间秒
     expiresIn: 60 * 60 * 24
   },
@@ -251,12 +251,16 @@ export const Config: config = {
 - 环境变量配置 `src/.env`文件
 
   ```bash
-  DATABASE_URL="mysql://root:123456@localhost:3306/carole" #url格式  mysql://用户名:密码@ip:端口/数据库?参数charset=utf8mb4
-  psdSecret = "carole123456"#密码加密秘钥 加密算法：HmacSHA256
-  tokenSecret = "carole123456" #token加密秘钥
-  mailHost = ""#邮箱服务器 qq：smtp.qq.com 网易： smtp.163.com
-  mailUser = "" #发件邮箱账号
-  mailPass = "" #发件邮箱密码
+#docker DATABASE_URL 详见docker-compose.yml
+# DATABASE_URL="mysql://root:123456@mysql-container:3306/nest_admin" #url格式  mysql://用户名:密码@ip:端口/数据库?参数charset=utf8mb4
+
+# 本地DATABASE_URL
+DATABASE_URL="mysql://root:123456@localhost:3306/nest_admin" #url格式  mysql://用户名:密码@ip:端口/数据库?参数charset=utf8mb4
+psdSecret = "4AfbskM6rEGQ8mEJoQ0yxt5KG9djH48B" #密码加密秘钥 加密算法：HmacSHA256
+tokenSecret = "QnCwU57b5TPi4R37pdJhhXApELza5bgQ" #token加密秘钥
+mailHost = "" #邮箱服务器 qq：smtp.qq.com 网易： smtp.163.com
+mailUser = "" #发件邮箱账号
+mailPass = "" #发件邮箱密码
   ```
 
 ### 配置注意点
@@ -361,7 +365,7 @@ model SysConfig {
   
 - 当数据库使用 `long` 类型时，查询出来的数据会自动转换为 `bigint`。在将这些数据转换为 JSON 时可能会出现问题。可以转换为字符串返回前端，但前端传来数据后端也需要转换为long才能正常使用。
 
-  当数字超出±(2^53 - 1)转换为Number也会出现问题![image-20240612094525584](./assets/image-20240612094525584.png)
+  当数字超出±(2^53 - 1)转换为Number也会出现问题!
 
   ```javascript
   BigInt.prototype.toJSON = function(){
