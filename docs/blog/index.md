@@ -133,6 +133,262 @@ const config: UserConfig = {
 export default config
 ```
 
+```json
+{
+  "git.autofetch": true,
+  // 字体 fira code
+  "editor.fontFamily": "Fira Code",
+  // 开启连体字
+  "editor.fontLigatures": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDelete": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "rust": true
+  },
+  "editor.fontSize": 14.5,
+  "terminal.external.osxExec": "iTerm.app",
+  /** 暂时解决vue插件导致折叠图标丢失问题 */
+  // "editor.foldingStrategy": "indentation",
+  "github.copilot.editor.enableAutoCompletions": true,
+  // "terminal.integrated.inheritEnv": false,
+  // "window.nativeTabs": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "solid",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "window.commandCenter": false,
+  // "window.titleBarStyle": "custom",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // "window.titleBarStyle": "native",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#cabbe9",
+    "sideBarSectionHeader.background": "#9fbbc211",
+    "editor.lineHighlightBackground": "#10f5f520",
+    // 标签激活的背景颜色
+    "tab.activeForeground": "#333333",
+    "tab.activeBorder": "#824ae33b"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Quiet Light for VSC]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "entity.name.function.ts",
+            "variable.other.readwrite.alias.ts",
+            "variable.other.readwrite.alias.tsx",
+            "entity.name.type.config.prisma",
+            "entity.name.type.model.prisma",
+            "entity.name.function.attribute.prisma",
+            "entity.name.function.tsx",
+            "entity.name.function.rust"
+          ],
+          "settings": {
+            "foreground": "#44a2f0",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": ["source.python", "meta.function-call.generic.python"],
+          "settings": {
+            "foreground": "#44a2f0"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.begin.html",
+            "punctuation.definition.string.end.html",
+            "string.quoted.double.html",
+            "variable.other.assignment.prisma"
+          ],
+          "settings": {
+            "foreground": "#e76590"
+          }
+        },
+        {
+          "scope": [
+            "string.quoted.single.ts",
+            "punctuation.definition.string.begin.ts",
+            "punctuation.definition.string.end.ts",
+            "punctuation.definition.string.begin.tsx",
+            "punctuation.definition.string.end.tsx"
+          ],
+          "settings": {
+            "foreground": "#75bb59"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.constant.ts",
+            "variable.other.object.ts",
+            "variable.other.constant.tsx",
+            "variable.other.object.tsx",
+            "keyword.operator.new.tsx"
+          ],
+          "settings": {
+            "foreground": "#FF5370"
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric",
+            "variable.language.this.ts",
+            "keyword.control.import.ts",
+            "support.class.promise.tsx"
+          ],
+          "settings": {
+            "foreground": "#E06C75"
+          }
+        },
+        {
+          "scope": ["constant.language.null", "support.type.python"],
+          "settings": {
+            "foreground": "#C678DD" // 你可以替换为你喜欢的颜色
+          }
+        },
+        {
+          "scope": "constant.language.undefined",
+          "settings": {
+            "foreground": "#C678DD" // 你可以替换为你喜欢的颜色
+          }
+        },
+        {
+          "scope": [
+            "support.type.property-name",
+            "variable.other.property",
+            "meta.object-literal.key.ts",
+            "entity.name.function.ts",
+            "variable.other.object.property.ts",
+            "entity.name.function.js"
+          ],
+          "settings": {
+            "foreground": "#61AFEF" // 浅蓝色
+          }
+        },
+        {
+          "scope": [
+            "storage.type.model.prisma",
+            "keyword.control.from.ts",
+            "keyword.control.import.tsx",
+            "keyword.control.from.tsx",
+            "entity.name.type.tsx",
+            "entity.name.type.rust"
+          ],
+          "settings": {
+            "foreground": "#eb99a1"
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.ts",
+            "entity.name.type.tsx",
+            "support.function.functional.prisma",
+            "variable.language.relations.prisma",
+            "support.class.promise.ts",
+            "keyword.control.import.python",
+            "support.class.component.tsx",
+            "variable.other.readwrite.alias.js",
+            "variable.other.object.js",
+            "variable.other.constant.js",
+            "variable.other.readwrite.js"
+          ],
+          "settings": {
+            "foreground": "#ed8a94"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.property.ts",
+            "variable.other.property.tsx",
+            "support.constant.constant.prisma",
+            "variable.other.constant.property.ts",
+            "meta.function-call.arguments.python",
+            "variable.other.constant.property.js"
+          ],
+          "settings": {
+            "foreground": "#32b1a9"
+          }
+        },
+        {
+          "scope": [
+            "variable.parameter.key.prisma",
+            "entity.name.function.macro.rust",
+            "variable.other.object.property.js"
+          ],
+          "settings": {
+            "foreground": "#aa65cc"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.readwrite.ts",
+            "variable.parameter.ts",
+            "variable.other.readwrite.tsx",
+            "variable.parameter.tsx",
+            "storage.type.config.prisma",
+            "support.type.primitive.prisma",
+            "entity.name.type.result.rust",
+            "variable.parameter.function-call.python",
+            "meta.object-literal.key.tsx",
+            "meta.object-literal.key.js"
+          ],
+          "settings": {
+            "foreground": "#f1844a"
+          }
+        },
+        {
+          "scope": [
+            "string.key.json5",
+            "support.variable.property.importmeta.ts"
+          ],
+          "settings": {
+            "foreground": "#f1844a"
+          }
+        },
+        {
+          "scope": ["support.type.primitive.ts", "support.type.primitive.tsx"],
+          "settings": {
+            "foreground": "#11a6dc"
+          }
+        },
+        {
+          "scope": ["keyword.operator.new.ts"],
+          "settings": {
+            "foreground": "#dc2c11"
+          }
+        }
+      ]
+    }
+  },
+  "workbench.colorTheme": "Quiet Light for VSC",
+  "vscode_vibrancy.opacity": 0.05,
+  "vscode_vibrancy.theme": "Default Light",
+  "vscode_vibrancy.refreshInterval": 60,
+  "window.titleBarStyle": "custom",
+}
+```
+
+字体用的是 Fira Code，开启了连体字，这样代码看起来更舒服。  
+主题用的是 Quiet Light for VSC，这是一个非常好看的主题，我非常喜欢。  
+背景透明度设置为 0.05，这样看起来更舒服。用的是vscode_vibrancy插件。  
+
+
 :::
 
 <script setup>
