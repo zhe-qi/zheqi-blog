@@ -133,7 +133,7 @@ const config: UserConfig = {
 export default config
 ```
 
-```json
+```json [setting.json]
 {
   "git.autofetch": true,
   // 字体 fira code
@@ -382,12 +382,11 @@ export default config
   "vscode_vibrancy.refreshInterval": 60,
   "window.titleBarStyle": "custom",
 }
+
+// 字体用的是 Fira Code，开启了连体字，这样代码看起来更舒服。  
+// 主题用的是 Quiet Light for VSC，这是一个非常好看的主题，我非常喜欢。  
+// 背景透明度设置为 0.05，用的是vscode_vibrancy插件。  
 ```
-
-字体用的是 Fira Code，开启了连体字，这样代码看起来更舒服。  
-主题用的是 Quiet Light for VSC，这是一个非常好看的主题，我非常喜欢。  
-背景透明度设置为 0.05，这样看起来更舒服。用的是vscode_vibrancy插件。  
-
 
 :::
 
