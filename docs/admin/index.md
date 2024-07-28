@@ -9,6 +9,9 @@ head:
 > [!WARNING]
 > 当前同步carole-admin文档，后续拓展二开文档
 
+项目地址[nestry-admin](https://github.com/zhe-qi/nestry-admin)  
+可以详细对比两个项目代码差异，二开不是因为其他原因，而是想加入大量自己的想法
+
 ## 环境
 
 - nodejs: LTS
