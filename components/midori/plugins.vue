@@ -88,7 +88,7 @@ onUnmounted(() => {
     </section>
     <section class="flex flex-col w-full max-w-xl">
       <ol
-        class="grid grid-cols-2 sm:grid-cols-3 gap-4 list-none w-full text-gray-500 dark:text-gray-400 text-lg"
+        class="grid grid-cols-2 sm:grid-cols-3 gap-6 list-none w-full text-gray-500 dark:text-gray-400 text-lg"
       >
         <li
           v-for="[name, icon, href, darkIcon = ''] in plugins"
@@ -101,7 +101,7 @@ onUnmounted(() => {
           <a
             :href="href"
             :target="href.startsWith('http') ? '_blank' : ''"
-            class="flex flex-col justify-center items-center gap-3 w-full h-full text-lg font-medium text-gray-600 dark:text-gray-400 relative z-10"
+            class="flex hover:border border-zinc-500/50 dark:border-zinc-400/50 flex-col justify-center items-center gap-3 w-full h-full text-lg font-medium text-gray-600 dark:text-gray-400 relative z-10"
           >
             <img
               :src="isDark && darkIcon ? darkIcon ?? icon : icon"
